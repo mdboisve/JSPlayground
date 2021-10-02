@@ -1,4 +1,3 @@
-
 // MANIPULATING HTML WITH BUTTON FUNCTION
 
 // document.getElementById("button").onclick = function() {    When the button is clicked, run the following method
@@ -69,13 +68,13 @@
 
 // var input = prompt("Put in a NON DECIMAL number: "); // Converts the given base to decimal -- ex: input = 101, binary is 5, octal is 65
 // console.log(input + " in binary is: " + Number.parseInt(input, 2));
-// console.log("Octal equivalent is: " +  Number.parseInt(input, 8));
+// console.log("Octal equivalent is: " + Number.parseInt(input, 8));
 
 // var input = Number(prompt("Put in a DECIMAL number: ")); // need to wrap the prompt in Number since prompt by itself is a string, can't take bases of strings
 // console.log(input + " in binary is: " + input.toString(2));
 // console.log(input + " in octal is: " + input.toString(8));
 
- // Number.        <-- blue boxes are numbers and purple boxes are methods
+// Number.        <-- blue boxes are numbers and purple boxes are methods
 
 // this:
 // let myName = "Mike Boisvert";
@@ -110,3 +109,76 @@
 // let message = "this is gonna get split up by all of the spaces !";
 // console.log(message.split(" ")); // breaks up the string by the argument (the delimiter) into an array
 // -------------------------------------------------------------------------------------------------------
+
+// let position = { // Making an object
+//     x: 10,
+//     y: 20,
+//     print: function() {
+//         console.log(`X: ${this.x}, Y: ${this.y}, inside an object.`); // Syntax of a function inside of an object
+//     },
+//     innerPosition: { // Nested object
+//         xx: 1000,
+//         yy: 2000
+//     }
+// }
+
+// function print() {
+//     console.log(`X: ${this.x}, Y: ${this.y}, outside of an object`); // Syntax of a function outside of an object
+// }
+
+// let myPosition = position;
+
+// console.log(position);
+// console.log(myPosition);
+
+// myPosition.x = 200;
+
+// console.log(position);
+// console.log(myPosition); // The point here being that both of these objects are pointing to the same object, not a copy of the object.
+
+// position.print();
+// print();
+// console.log(position.innerPosition.xx); // retreiving values of a nested object
+
+
+// NOTE: prompt() won't work unless it is in a browser, ctrl alt n  will not work with prompt
+// More on switch statements:
+// {
+//     let name = prompt("What is your name?");
+//     switch (name) {
+//         case "Lindsey":
+//         case "Mike":        // 2 cases that have the same result can be combined like this
+//             console.log("Hello Mike or Lindsey.");
+//             break;
+//         default:
+//             console.log("This aint for you, get out.");
+//             break;
+//     }
+// }
+
+// single line if statement   NOTE: using the variable "name" is used on window scale, so it will be deprecated if you use it in global definitions
+// let name2 = "Mike";
+// if (name2 == "Mike") console.log("Welcome Mike!"); // can put the whole logic of if on one line
+
+// Ternary operator example
+// let guess = prompt("what is my name?");
+// let points = guess === "Mike" ? 10 : 0; // assigns points accordingly if they guess my name right or not (could be a string that results, or anything else)
+
+// can also put methods inside of the ternary operator:
+// guess === "Mike" ? console.log("10 points!") : console.log("0 points...");
+// console.log(points);
+
+// for (let i = 1; i < 11; i++) { // using a for statement with if statements in it.
+//     if (i == 1) console.log(`This is the ${i}st iteration.`);
+//     else if (i == 2) console.log(`This is the ${i}nd iteration.`);
+//     else if (i == 3) console.log(`This is the ${i}rd iteration.`);
+//     else console.log(`This is the ${i}th iteration.`);
+// }
+
+// practical example of a do while loop -- will always execute at least once!
+// let password = "i dont know";
+// do {
+//     guess = prompt("What is the password?");
+// } while (guess !== password);
+
+// ----------Something to look up would be difference between continue and break--------------
