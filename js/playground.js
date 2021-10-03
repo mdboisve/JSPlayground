@@ -334,3 +334,26 @@
 //     })
 //     console.log("-------------");
 // });
+
+// Date object
+// var curDate = new Date(); // putting in 0 here will give you the UNIX EPOCH, one argument is MS since the epoch
+// console.log(curDate); // doesn't output the same when using ctrl-alt-n NOTE: GMT is the standard that all other timezones are based off of
+// var prevDate = new Date(1991, 8, 11); // Put in a date, arguments are: year, month (0-based), day, hour, minute, second
+// console.log(prevDate);
+// console.log(Date.now()); // counts how many MS its been since the UNIX EPOCH (Jan 1, 1970)
+
+// let before = new Date(1991, 8); // counting the number of days between two date oobjects
+// let after = new Date(1991, 11);
+// let total = after - before;
+// let oneDay = 1000 * 60 * 60 * 24;
+// console.log(total / oneDay);
+
+// most common methods with dates
+
+// let date = new Date(2012, 11, 15, 10, 10, 10); // if you want the date in your local time zone
+// console.log(`Local time zone: ${date}`);
+// let date2 = new Date(Date.UTC(2012, 11, 15, 10, 10, 10)); // if you want the date in universal time zone (GMT)
+// console.log(`Universal time zone: ${date2}`); 
+
+// let date = new Date(2012, 10, 12);
+// console.log(date.getFullYear()); // just gets the year of the date object, there are also get month, get date (day of month), day (day of week), etc
