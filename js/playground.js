@@ -182,3 +182,155 @@
 // } while (guess !== password);
 
 // ----------Something to look up would be difference between continue and break--------------
+
+// review for how nested loops iterate -> will do j loop 5 times, then increment i and do j 5 more times, does the innermost for loop first
+// for (let i = 0; i < 5; i++) {
+//     for (let j = 0; j < 5; j++) {
+//         for (let k = 0; k < 5; k++) {
+//             console.log(`i: ${i}, j: ${j}, k: ${k}`);
+//         }
+//     }
+// }
+
+// using a nested for loop with html elements:
+// let d = document.getElementById("destination");
+// for (let i = 0; i < 5; i++) {
+//     for (let j = i; j >= 0; j--) {
+//         d.append(j + " ");
+//     }
+//     var br = document.createElement('br'); // makes the break every time i increments
+//     d.appendChild(br);
+// }
+
+// let ages = [24, 27, 30];
+// console.log(ages); // if you reset the length, it will fill the gaps in with undefineds
+// ages[5] = 45; // if you set an element outside of the arrays length, all elements leading to that that were empty will be undefined
+// for (let i = 0; i < ages.length; i++) {
+//     console.log(ages[i]);
+// }
+
+// Multi dimensional arrays
+// let grades = [
+//     [13, 14, 15],
+//     [100, 10, 45],
+//     [0, 0, 0],
+//     [50, 50, 50],
+//     [5, 5, 5],
+//     [15, 15, 15],
+//     [0, 0, 0],
+//     [100, 100, 100]
+// ]
+// console.log(grades[1]) // grabs a sub array inside the original array  OUTPUTS [100, 10, 45]
+// console.log(grades[1][2]) // individual element from sub array         OUTPUTS 45
+
+// let array = [3, "poppins", function() { console.log("Hello") }]; // syntax for making a function inside of an array
+// array[2](); // Correct syntax for using a function inside of an array
+
+// more fun with arrays
+// let array = [1, 5, 3, 7, 6, 0, 56, 78, 2, 98, 9, 10];
+// array.length = 3;
+// console.log(array); // cuts off rest of the elements beyond the newly declared length   OUTPUTS  [1, 5, 3]
+
+// let array = [5, 46, 3, 9, 37, 69, 30, 5, 1, 50]; // total 255 
+
+// finding min and max value of an array
+// -----------------------------------------------------------------------
+// let max = Number.NEGATIVE_INFINITY;
+// let min = Number.POSITIVE_INFINITY;
+// let minIndex;
+// let maxIndex;
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i] > max) {
+//         max = array[i];
+//         maxIndex = i;
+//     } else if (array[i] < min) {
+//         min = array[i];
+//         minIndex = i;
+//     }
+// }
+
+// console.log(`max element: ${max} found at index: ${maxIndex}`);
+// console.log(`min element: ${min} found at index: ${minIndex}`);
+// -----------------------------------------------------------------------
+
+// finding the average of the array
+// let total = 0;
+// for (let i = 0; i < array.length; i++) {
+//     total += array[i]; // generates total of the whole array
+// }
+// let avg = (total / array.length);
+// console.log(`avg of the array is ${avg}`);
+
+// fill an array with user input
+// let grades = [];
+// while (true) {
+//     let input = prompt("Add a grade, press cancel or type q to stop.");
+//     if (input === "q" || input === null) {  // null indicates that cancel was clicked in the web browser.  
+//                                             // input that stops infinite loop is known as a SENTINAL VALUE
+//         console.log(grades);
+//         break;
+//     }
+//     grades.push(Number(input)); // PUSHING INTO ARRAYS CHANGES THE ORIGINAL ARRAY, IT DOESN'T MAKE A COPY
+//     console.log(grades);
+// }
+
+// METHODS: you can put multiple values into PUSH and UNSHIFT
+/* PUSH()    adds an element to the END of an array, returns new array length
+   UNSHIFT() adds an element to the BEGINNING of an array, returns new array length
+   POP()     removes an element from the end of an array, returns the removed value
+   SHIFT()   removes an element from the BEGINNING of an array, returns the removed value 
+   SPLICE()  add and remove elements from the array 
+     - splice arguments - (index where to start, # of elements to delete, elements you want to add AFTER the start index (can be multiple))*/
+
+// let array = [1, 2, 6, 7, 8, 9];
+// array.splice(2, 0, 3, 4, 5); // for splice if your starting value is passed max length, elements just get added to the end. 
+// console.log(array);
+
+// let array = [5, 3, 8, 13, 17, 21, 25, 30, 400, 65, 2, 76, 34, 44];
+// console.log(array.sort()); // sorts all of the numbers that start with 1, then 2, etc
+// console.log(array.sort(function(a, b) { return a - b })); // callback function that sorts the array numerically
+// console.log(array.reverse()); // NOTE: all do these change the original array
+// console.log(array);
+
+// let grades = [40, 37, 65];
+// let otherGrades = [100, 97, 56];
+// console.log(grades.concat(otherGrades)); // concat DOES NOT ALTER THE ORIGINAL ARRAY! just returns the new array - assign the concat to another variable if you need the new array
+// console.log(grades);
+// let fullGrades = grades.concat(otherGrades);
+// console.log(fullGrades);
+
+// let grades = [45, 2, 7, 19, 60, 35, 56, 34, 100, 577, 1000000];
+// console.log(grades.includes(546)); // just returns true or false, if you need the index of a searched element, use the indexOf method
+// console.log(grades.indexOf(61)); // returns index if its in the array, returns -1 if not in the array
+// let other = grades.join(" and then "); // join converts an array to a string, the argument for join sets different delimeters
+// console.log((other));
+// console.log(grades.slice(4, 8)); // doesn't change the original array, grabs a part of an array
+
+// let grades = [1, 4, 7, 9, 10, 15];
+// grades.forEach(function(item) { // only going to work with elements that are defined, can have 3 args: first is elements, 2nd is index, third is the array
+//     console.log(`${item + 10}`);
+// });
+
+// forEach with multidimensional arrays
+// let grades = [
+//     [1, 2, 34, 4, 5],
+//     [45, 67, 89, 23, 20],
+//     [100, 100, 100, 100, 100],
+//     [50, 50, 50, 50, 50]
+// ]
+
+// review: using for loop for iterating 2D array
+// for (let i = 0; i < grades.length; i++) { // returns the rows of the 2D array
+//     for (let j = 0; j < grades[i].length; j++) { // returns the elements of the 2D array (grades[i].length is best approach because it covers arrays with different lengths)
+//         console.log(grades[i][j]);
+//     }
+//     console.log("------------------");
+// }
+
+//using forEach in 2D array:  THIS IS MUCH BETTER PRACTICE
+// grades.forEach(function(row) {
+//     row.forEach(function(col) {
+//         console.log(col);
+//     })
+//     console.log("-------------");
+// });
