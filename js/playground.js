@@ -367,3 +367,30 @@
 // square(x) this x is an argument
 // square() <- this won't produce an error, just undefined
 // square(5, 10, "hello") <- won't produce an error, will just ignore all arguments passed the first one since the method only has 1 parameter
+
+// in Jacascript, functions get treated as if they are objects
+// Assigning a function to a variable is known as a function expression, example below
+
+// let myFunc = function (x, y) {
+//     let total = 1;
+//     for (let i = 0; i < y; i++) {
+//         total *= x;
+//     }
+//     return total;
+// }
+
+// console.log(myFunc(3, 3));
+
+// Hoisting - JS code is all "scanned" first, then executed
+// first run through is just for variable / function declarations, no execution at all
+
+// console.log(x); // error: "x isn't defined"
+// but if we put this declaration below the console log
+// var x = 10;     // no error returns "undefined"
+
+// if we run this code:
+// doStuff();
+// var doStuff = function() { // error: doStuff is not a function -> only the variable is hoisted, NOT the function in the variable
+//        console.log("hey");
+//    } // the way to make this not error out is to put the "doStuff()" after function expression
+// if you use let and const, it will work normally, this only applies to the var keyword
