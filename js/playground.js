@@ -357,3 +357,13 @@
 
 // let date = new Date(2012, 10, 12);
 // console.log(date.getFullYear()); // just gets the year of the date object, there are also get month, get date (day of month), day (day of week), etc
+
+// More on functions
+// arguments are what a function gets called with, parameter is defined variables in the method declaration
+// function square(x) { this x is a parameter
+//   return x * x;
+// }
+// let x = 5;
+// square(x) this x is an argument
+// square() <- this won't produce an error, just undefined
+// square(5, 10, "hello") <- won't produce an error, will just ignore all arguments passed the first one since the method only has 1 parameter
